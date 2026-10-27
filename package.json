@@ -1,0 +1,24 @@
+{
+  "name": "oop",
+  "version": "1.0.0",
+  "description": "OOP practical programs (CM31203) - print or save any practical as standard C++ or Turbo C++",
+  "bin": {
+    "oop": "bin/oop.js"
+  },
+  "files": [
+    "bin/",
+    "*.cpp",
+    "README.md"
+  ],
+  "keywords": [
+    "oop",
+    "c++",
+    "turbo-c++",
+    "practicals",
+    "polytechnic"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,5 @@
+node_modules/
+*.tgz
+student.txt
+*.exe
+*.obj

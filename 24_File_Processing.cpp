@@ -1,0 +1,53 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <stdexcept>
+using namespace std;
+
+int main() {
+    string line;
+
+    try {
+        ofstream fout("student.txt");
+
+        if (!fout) {
+            throw runtime_error("File could not be created");
+        }
+
+        fout << "Welcome to GPP." << endl;
+        fout << "This is file handling example." << endl;
+        fout.close();
+
+        cout << "Data written to file successfully." << endl;
+
+        ofstream app("student.txt", ios::app);
+        app << "This line is appended at the end." << endl;
+        app.close();
+
+        ifstream fin("student.txt");
+
+        if (!fin) {
+            throw runtime_error("File not found");
+        }
+
+        cout << "Reading from file:" << endl;
+        while (getline(fin, line)) {
+            cout << line << endl;
+        }
+        fin.close();
+
+        int a = 100, b = 0;
+        if (b == 0) {
+            throw runtime_error("Division by zero is not allowed");
+        }
+        cout << "Result = " << a / b << endl;
+    }
+    catch (runtime_error &e) {
+        cout << "Exception caught: " << e.what() << endl;
+    }
+    catch (...) {
+        cout << "An unknown exception occurred." << endl;
+    }
+
+    return 0;
+}
